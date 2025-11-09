@@ -5,9 +5,9 @@
 }
 
 :root {
-  --color-primary: rgba(43, 40, 136, 1);
+  --color-primary: rgb(138, 155, 234);
   --color-secondary: rgba(194, 186, 186, 1);
-  --color-accent: rgb(186, 0, 180);
+  --color-accent: rgb(196, 122, 215);
 }
 
 body {

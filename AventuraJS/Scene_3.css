@@ -5,9 +5,9 @@
 }
 
 :root {
-    --color-primary: rgba(43, 40, 136, 1);
+    --color-primary: rgb(138, 155, 234);
     --color-secondary: rgba(194, 186, 186, 1);
-    --color-accent: rgb(186, 0, 180);
+    --color-accent: rgb(196, 122, 215);
 }
 
 
@@ -19,20 +19,76 @@ body {
     font-family: Arial, sans-serif;
 }
 
+header {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 #container {
     display: grid;
     justify-content: center;
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 200px);
-    grid-gap: 10px;
+    grid-template-rows: repeat(2, 250px);
+    grid-gap: 15px;
 }
 
 .item-container {
+    width: 400px;
     margin: 4px;
-    gap: 4px;
     border: 2px solid black;
     background: var(--color-accent);
+}
+
+.enemy-container {
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+}
+
+.enemy-container img {
+    width: 150px;
+    height: 150px;
+}
+
+.enemy-container h2 {
+    padding: 4px;
+    font-size: 1.5rem;
+}
+
+.description {
+    margin: 2px;
+    padding: 4px;
+    gap: 8px;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+#continue-btn {
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: var(--color-accent);
+    color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#continue-btn:hover {
+    background-color: darkmagenta;
+}
+
+#continue-btn:active {
+    scale: 0.9;
+    background-color: rgb(232, 146, 232);
 }
 
 /* FOOTER */
@@ -43,7 +99,8 @@ footer {
 
 #inventory-container {
     background-color: var(--color-secondary);
-    margin: 5%;
+    border-radius: 10px;
+    margin: 8%;
     display: flex;
     gap: 4px;
     padding: 4px;
@@ -64,20 +121,4 @@ footer {
 .item img:hover {
     transform: scale(1.1);
     cursor: pointer;
-}
-
-.player-container {
-    display: flex;
-    border: 1px solid black;
-}
-
-.player-container img {
-    width: 100px;
-    height: 100px;
-}
-
-.player-container h2 {
-    display: flex;
-    justify-content: right;
-    font-size: 1.5rem;
 }
