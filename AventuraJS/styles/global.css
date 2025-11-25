@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #2b2888;
+  --color-secondary: #c2baba;
+  --color-accent: rgb(186, 0, 180);
+}
+
+/* Para cambiar de escenas */
+
+.scene {
+    display: none;
+}
+
+.scene.active {
+    display: block;
+}
