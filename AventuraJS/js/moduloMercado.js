@@ -12,11 +12,9 @@ export const productos = PRODUCTOS.map(prod =>
     )
 );
 
-
 export function filtrarProductos(rareza) {
     return productos.filter(producto => producto.rareza === rareza);
 }
-
 
 export function aplicarDescuento(tipo = null, rareza = null, descuento = 100) {
     return productos

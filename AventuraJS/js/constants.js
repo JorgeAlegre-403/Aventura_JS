@@ -52,22 +52,6 @@ export const PRODUCTOS = [
         tipo: TIPOS.ARMA,
         bonus: 35
     },
-    {
-        nombre: "Fusil",
-        imagen: "./AventuraJS/objects/Fusil_1.png",
-        precio: 1500,
-        rareza: RAREZAS.EPICA,
-        tipo: TIPOS.ARMA,
-        bonus: 40
-    },
-    {
-        nombre: "Fusil Avanzado",
-        imagen: "./AventuraJS/objects/Fusil_2.png",
-        precio: 2000,
-        rareza: RAREZAS.LEGENDARIA,
-        tipo: TIPOS.ARMA,
-        bonus: 50
-    },
     
     // ARMADURAS
     {
@@ -78,22 +62,6 @@ export const PRODUCTOS = [
         tipo: TIPOS.ARMADURA,
         bonus: 12
     },
-    {
-        nombre: "Armadura Reforzada",
-        imagen: "./AventuraJS/objects/Armadura.png",
-        precio: 900,
-        rareza: RAREZAS.RARA,
-        tipo: TIPOS.ARMADURA,
-        bonus: 20
-    },
-    {
-        nombre: "Armadura Pesada",
-        imagen: "./AventuraJS/objects/Armadura.png",
-        precio: 1400,
-        rareza: RAREZAS.EPICA,
-        tipo: TIPOS.ARMADURA,
-        bonus: 30
-    },
     
     // CONSUMIBLES
     {
@@ -103,22 +71,6 @@ export const PRODUCTOS = [
         rareza: RAREZAS.COMUN,
         tipo: TIPOS.CONSUMIBLE,
         bonus: 20
-    },
-    {
-        nombre: "Poción Mediana",
-        imagen: "./AventuraJS/objects/Pocion.png",
-        precio: 600,
-        rareza: RAREZAS.RARA,
-        tipo: TIPOS.CONSUMIBLE,
-        bonus: 40
-    },
-    {
-        nombre: "Poción Grande",
-        imagen: "./AventuraJS/objects/Pocion.png",
-        precio: 1100,
-        rareza: RAREZAS.EPICA,
-        tipo: TIPOS.CONSUMIBLE,
-        bonus: 60
     }
 ];
 
@@ -126,25 +78,25 @@ export const PRODUCTOS = [
 export const ENEMIGOS = [
     {
         nombre: "Hacker Novato",
-        avatar: "./AventuraJS/characters/Enemigo_1.png",
+        avatar: "./AventuraJS/enemies/Enemy_1.png",
         nivelAtaque: 15,
         vida: 80
     },
     {
-        nombre: "Script Kiddie",
-        avatar: "./AventuraJS/characters/Enemigo_2.png",
+        nombre: "Kiddie",
+        avatar: "./AventuraJS/enemies/Enemy_2.png",
         nivelAtaque: 20,
         vida: 100
     },
     {
-        nombre: "Programador Malicioso",
-        avatar: "./AventuraJS/characters/Enemigo_3.png",
+        nombre: "Madisson",
+        avatar: "./AventuraJS/enemies/Enemy_3.png",
         nivelAtaque: 30,
         vida: 120
     },
     {
-        nombre: "Cyber Criminal",
-        avatar: "./AventuraJS/characters/Enemigo_4.png",
+        nombre: "Josefina",
+        avatar: "./AventuraJS/enemies/Enemy_4.png",
         nivelAtaque: 40,
         vida: 150
     }
@@ -153,8 +105,8 @@ export const ENEMIGOS = [
 // JEFES
 export const JEFES = [
     {
-        nombre: "El Bug Final",
-        avatar: "./AventuraJS/characters/Jefe_1.png",
+        nombre: "Adam Smasher",
+        avatar: "./AventuraJS/enemies/Boss.png",
         nivelAtaque: 50,
         vida: 200,
         multiplicador: 1.5
