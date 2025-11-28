@@ -10,13 +10,19 @@
   --color-accent: rgb(186, 0, 180);
 }
 
-/* Para cambiar de escenas */
+body {
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
 
 .scene {
-  display: none;
+  display: none !important;
 }
 
 .scene.active {
-  display: block;
+  display: flex !important;
 }
 
+.hidden {
+  display: none !important;
+}
