@@ -1,0 +1,182 @@
+#scene-6 {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a1b9a 0%, #4a148c 100%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#scene-6 header {
+    width: 100%;
+    text-align: center;
+}
+
+#scene-6 main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#tarjeta-final {
+    background: white;
+    border-radius: 25px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+}
+
+#mostrar-rango {
+    text-align: center;
+    padding: 12px;
+    background: #ffd700;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+#player-rank {
+    font-size: 3rem;
+    color: #4a148c;
+    margin: 0 0 15px 0;
+}
+
+.icono-rango {
+    font-size: 4rem;
+}
+
+#mostrar-rango.novato {
+    background: #90a4ae;
+}
+
+#mostrar-rango.novato #player-rank {
+    color: #263238;
+}
+
+#estadisticas-finales {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#estadisticas-finales div {
+    background: var(--color-primary);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+#estadisticas-finales p {
+    margin: 0;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#estadisticas-finales span {
+    color: #ffd700;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#jugador-final {
+    text-align: center;
+    padding: 20px;
+    background: rgba(194, 186, 186, 0.3);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#jugador-final img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--color-accent);
+    object-fit: cover;
+}
+
+#jugador-final h3 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+}
+
+#scene-6 button {
+    padding: 15px 50px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: var(--color-accent);
+    color: white;
+    border: 3px solid black;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#scene-6 button:hover{
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+}
+
+@media (max-width: 720px) {
+    #player-rank {
+        font-size: 2rem;
+    }
+
+    .icono-rango {
+        font-size: 3rem;
+    }
+
+    #tarjeta-final {
+        padding: 25px;
+    }
+
+    #estadisticas-finales p {
+        font-size: 1rem;
+    }
+
+    #estadisticas-finales span {
+        font-size: 1.3rem;
+    }
+
+    #jugador-final img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #jugador-final h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    #player-rank {
+        font-size: 1.8rem;
+    }
+
+    .icono-rango {
+        font-size: 2.5rem;
+    }
+
+    #tarjeta-final {
+        padding: 20px;
+    }
+
+    #jugador-final img {
+        width: 80px;
+        height: 80px;
+    }
+
+    #jugador-final h3 {
+        font-size: 1.3rem;
+    }
+
+    #scene-6 button {
+        padding: 12px 35px;
+        font-size: 1rem;
+    }
+}
