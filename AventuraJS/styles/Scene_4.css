@@ -95,7 +95,7 @@
 }
 
 .enemy-stat span {
-    color: var()
+    color: #ffeb3b;
     font-weight: bold;
 }
 
