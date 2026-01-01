@@ -6,21 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aventura Cyberpunk</title>
     <link rel="stylesheet" href="./AventuraJS/styles/global.css">
+    <link rel="stylesheet" href="./AventuraJS/styles/Scene_0.css">
     <link rel="stylesheet" href="./AventuraJS/styles/Scene_1.css">
     <link rel="stylesheet" href="./AventuraJS/styles/Scene_2.css">
     <link rel="stylesheet" href="./AventuraJS/styles/Scene_3.css">
     <link rel="stylesheet" href="./AventuraJS/styles/Scene_4.css">
     <link rel="stylesheet" href="./AventuraJS/styles/Scene_5.css">
     <link rel="stylesheet" href="./AventuraJS/styles/Scene_6.css">
+    <link rel="stylesheet" href="./AventuraJS/styles/Scene_7.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script type="module" src="./AventuraJS/js/main.js"></script>
 </head>
 
 <body>
 
-<!-- ESCENA 1 -->
+    <!-- MONEDERO FIJO -->
+    <div id="monedero-container">
+        <img src="./AventuraJS/images/monedero.png" alt="Monedero">
+        <span id="dinero-jugador">500</span>
+    </div>
 
-    <section id="scene-1" class="scene active">
+    <!-- ANIMACION MONEDAS -->
+    <div id="monedas-animacion" class="hidden">
+        <div class="moneda moneda-1"><img src="./AventuraJS/images/moneda.png" alt="moneda"></div>
+        <div class="moneda moneda-2"><img src="./AventuraJS/images/moneda.png" alt="moneda"></div>
+        <div class="moneda moneda-3"><img src="./AventuraJS/images/moneda.png" alt="moneda"></div>
+    </div>
+
+    <!-- ESCENA 0-->
+    <section id="scene-0" class="scene active">
+        <header>
+            <h1 id="titulo">Crea tu Personaje</h1>
+        </header>
+
+        <main>
+            <form id="form-personaje">
+                <div class="form-group">
+                    <label for="nombre-personaje">Nombre:</label>
+                    <input type="text" id="nombre-personaje" name="nombre" placeholder="Escribe tu nombre" required>
+                    <span class="error-message" id="error-nombre"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="ataque-personaje">Ataque:</label>
+                    <div class="input-controls">
+                        <button type="button" class="btn-control" data-action="decrease" data-target="ataque">-</button>
+                        <input type="number" id="ataque-personaje" name="ataque" value="0" readonly>
+                        <button type="button" class="btn-control" data-action="increase" data-target="ataque">+</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="defensa-personaje">Defensa:</label>
+                    <div class="input-controls">
+                        <button type="button" class="btn-control" data-action="decrease"
+                            data-target="defensa">-</button>
+                        <input type="number" id="defensa-personaje" name="defensa" value="0" readonly>
+                        <button type="button" class="btn-control" data-action="increase"
+                            data-target="defensa">+</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="vida-personaje">Vida:</label>
+                    <div class="input-controls">
+                        <button type="button" class="btn-control" data-action="decrease" data-target="vida">-</button>
+                        <input type="number" id="vida-personaje" name="vida" value="100" readonly>
+                        <button type="button" class="btn-control" data-action="increase" data-target="vida">+</button>
+                    </div>
+                </div>
+
+                <div class="puntos-info">
+                    <p>Puntos disponibles: <span id="puntos-disponibles">10</span></p>
+                    <p>Total asignado: <span id="total-asignado">100</span> / 110</p>
+                </div>
+
+                <button type="submit" id="btn-crear-personaje">Comenzar Aventura</button>
+            </form>
+        </main>
+    </section>
+
+    <!-- ESCENA 1 -->
+
+    <section id="scene-1" class="scene">
         <header>
             <h1 id="titulo">Aventura en el Reino de JS</h1>
         </header>
@@ -31,16 +99,24 @@
         </div>
 
         <div id="estadisticas-escena-1">
-            <div><p>Ataque: <span id="ataque-inicial">0</span></p></div>
-            <div><p>Defensa: <span id="defensa-inicial">0</span></p></div>
-            <div><p>Puntos: <span id="puntos-inicial">0</span></p></div>
-            <div><p>Vida: <span id="vida-inicial">100</span></p></div>
+            <div>
+                <p>Ataque: <span id="ataque-inicial">0</span></p>
+            </div>
+            <div>
+                <p>Defensa: <span id="defensa-inicial">0</span></p>
+            </div>
+            <div>
+                <p>Puntos: <span id="puntos-inicial">0</span></p>
+            </div>
+            <div>
+                <p>Vida: <span id="vida-inicial">100</span></p>
+            </div>
         </div>
 
         <button id="btn-to-scene-2">Continuar</button>
     </section>
 
-<!-- ESCENA 2 -->
+    <!-- ESCENA 2 -->
 
     <section id="scene-2" class="scene">
         <header>
@@ -59,7 +135,7 @@
             <div id="inventory-container"></div>
         </footer>
     </section>
-    
+
     <!-- ESCENA 3 -->
 
     <section id="scene-3" class="scene">
@@ -73,9 +149,15 @@
         </div>
 
         <div id="estadisticas-escena-3">
-            <div><p>Ataque Total: <span id="ataque-total">0</span></p></div>
-            <div><p>Defensa Total: <span id="defensa-total">0</span></p></div>
-            <div><p>Vida Total: <span id="vida-total">100</span></p></div>
+            <div>
+                <p>Ataque Total: <span id="ataque-total">0</span></p>
+            </div>
+            <div>
+                <p>Defensa Total: <span id="defensa-total">0</span></p>
+            </div>
+            <div>
+                <p>Vida Total: <span id="vida-total">100</span></p>
+            </div>
         </div>
 
         <div id="inventario-escena-3">
@@ -86,7 +168,7 @@
         <button id="btn-to-scene-4">A la Batalla</button>
     </section>
 
-<!-- ESCENA 4 -->
+    <!-- ESCENA 4 -->
 
     <section id="scene-4" class="scene">
         <header>
@@ -110,7 +192,8 @@
         <main>
             <div id="arena-batalla">
                 <div class="combatiente" id="jugador-combate">
-                    <img id="jugador-combate-avatar" src="./AventuraJS/characters/Personaje_Principal.png" alt="Jugador">
+                    <img id="jugador-combate-avatar" src="./AventuraJS/characters/Personaje_Principal.png"
+                        alt="Jugador">
                     <div class="info-combate">
                         <h3 id="jugador-combate-nombre">Marilynn</h3>
                         <div class="barra-vida">
@@ -160,12 +243,50 @@
                 </div>
 
                 <div id="estadisticas-finales">
-                    <div><p>Puntuación Final: <span id="final-points">0</span></p></div>
-                    <div><p>Enemigos Derrotados: <span id="enemies-defeated">0</span></p></div>
-                    <div><p>Jefes Derrotados: <span id="bosses-defeated">0</span></p></div>
+                    <div>
+                        <p>Puntuación Final: <span id="final-points">0</span></p>
+                    </div>
+                    <div>
+                        <p>Enemigos Derrotados: <span id="enemies-defeated">0</span></p>
+                    </div>
+                    <div>
+                        <p>Jefes Derrotados: <span id="bosses-defeated">0</span></p>
+                    </div>
+                    <div>
+                        <p>Monedas Totales: <span id="final-money">0</span></p>
+                    </div>
                 </div>
 
-            
+
+            </div>
+        </main>
+
+        <footer>
+            <button id="btn-to-ranking">Ver Ranking</button>
+        </footer>
+    </section>
+
+    <!-- ESCENA 7 -->
+
+    <section id="scene-7" class="scene">
+        <header>
+            <h1 id="titulo">Ranking de Jugadores</h1>
+        </header>
+
+        <main>
+            <div id="ranking-container">
+                <table id="tabla-ranking">
+                    <thead>
+                        <tr>
+                            <th>Posición</th>
+                            <th>Nombre</th>
+                            <th>Puntuación</th>
+                            <th>Monedas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ranking-body">
+                    </tbody>
+                </table>
             </div>
         </main>
 
