@@ -7,10 +7,12 @@ class Jugador {
         this.vida = 100;
         this.vidaMaxima = 100;
         this.inventario = [];
+        this.dinero = 500;
+        this.ataqueBase = 0;
+        this.defensaBase = 0; 
     }
 
     añadirProducto(producto) {
-        // Clonamos el producto como un objeto simple
         const productoClonado = {
             nombre: producto.nombre,
             imagen: producto.imagen,
@@ -27,7 +29,7 @@ class Jugador {
     }
 
     obtenerAtaqueTotal() {
-        let total = 0;
+        let total = this.ataqueBase;
         for (let i = 0; i < this.inventario.length; i++) {
             if (this.inventario[i].tipo === "Arma") {
                 total += this.inventario[i].bonus;
@@ -36,9 +38,8 @@ class Jugador {
         return total;
     }
 
-
     obtenerDefensaTotal() {
-        let total = 0;
+        let total = this.defensaBase;
         for (let i = 0; i < this.inventario.length; i++) {
             if (this.inventario[i].tipo === "Armadura") {
                 total += this.inventario[i].bonus;
@@ -61,6 +62,7 @@ class Jugador {
         this.puntos = 0;
         this.vida = this.vidaMaxima;
         this.inventario = [];
+        this.dinero = 500;
     }
 }
 
