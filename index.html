@@ -84,6 +84,13 @@
                 <button type="submit" id="btn-crear-personaje">Comenzar Aventura</button>
             </form>
         </main>
+
+        <footer>
+            <div id="inventario-global">
+                <h3>Inventario</h3>
+                <div id="inventory-container"></div>
+            </div>
+        </footer>
     </section>
 
     <!-- ESCENA 1 -->
@@ -93,27 +100,36 @@
             <h1 id="titulo">Aventura en el Reino de JS</h1>
         </header>
 
-        <div id="jugador-escena-1">
-            <img src="./AventuraJS/characters/Personaje_Principal.png" alt="Personaje Principal">
-            <h2>Marilynn</h2>
-        </div>
+        <main>
+            <div id="jugador-escena-1">
+                <img src="./AventuraJS/characters/Personaje_Principal.png" alt="Personaje Principal">
+                <h2>Marilynn</h2>
+            </div>
 
-        <div id="estadisticas-escena-1">
-            <div>
-                <p>Ataque: <span id="ataque-inicial">0</span></p>
+            <div id="estadisticas-escena-1">
+                <div>
+                    <p>Ataque: <span id="ataque-inicial">0</span></p>
+                </div>
+                <div>
+                    <p>Defensa: <span id="defensa-inicial">0</span></p>
+                </div>
+                <div>
+                    <p>Puntos: <span id="puntos-inicial">0</span></p>
+                </div>
+                <div>
+                    <p>Vida: <span id="vida-inicial">100</span></p>
+                </div>
             </div>
-            <div>
-                <p>Defensa: <span id="defensa-inicial">0</span></p>
-            </div>
-            <div>
-                <p>Puntos: <span id="puntos-inicial">0</span></p>
-            </div>
-            <div>
-                <p>Vida: <span id="vida-inicial">100</span></p>
-            </div>
-        </div>
 
-        <button id="btn-to-scene-2">Continuar</button>
+            <button id="btn-to-scene-2">Continuar</button>
+        </main>
+
+        <footer>
+            <div id="inventario-global">
+                <h3>Inventario</h3>
+                <div id="inventory-container"></div>
+            </div>
+        </footer>
     </section>
 
     <!-- ESCENA 2 -->
@@ -131,8 +147,10 @@
         </main>
 
         <footer>
-            <h3>Carrito</h3>
-            <div id="inventory-container"></div>
+            <div id="inventario-global">
+                <h3>Inventario</h3>
+                <div id="inventory-container"></div>
+            </div>
         </footer>
     </section>
 
@@ -143,29 +161,38 @@
             <h1 id="titulo">Estado Actualizado</h1>
         </header>
 
-        <div id="jugador-escena-3">
-            <img src="./AventuraJS/characters/Personaje_Principal.png" alt="Personaje Principal">
-            <h2>Marilynn</h2>
-        </div>
-
-        <div id="estadisticas-escena-3">
-            <div>
-                <p>Ataque Total: <span id="ataque-total">0</span></p>
+        <main>
+            <div id="jugador-escena-3">
+                <img src="./AventuraJS/characters/Personaje_Principal.png" alt="Personaje Principal">
+                <h2>Marilynn</h2>
             </div>
-            <div>
-                <p>Defensa Total: <span id="defensa-total">0</span></p>
-            </div>
-            <div>
-                <p>Vida Total: <span id="vida-total">100</span></p>
-            </div>
-        </div>
 
-        <div id="inventario-escena-3">
-            <h3>Inventario</h3>
-            <div id="inventory-display"></div>
-        </div>
+            <div id="estadisticas-escena-3">
+                <div>
+                    <p>Ataque Total: <span id="ataque-total">0</span></p>
+                </div>
+                <div>
+                    <p>Defensa Total: <span id="defensa-total">0</span></p>
+                </div>
+                <div>
+                    <p>Vida Total: <span id="vida-total">100</span></p>
+                </div>
+            </div>
 
-        <button id="btn-to-scene-4">A la Batalla</button>
+            <div id="inventario-escena-3">
+                <h3>Inventario</h3>
+                <div id="inventory-display"></div>
+            </div>
+
+            <button id="btn-to-scene-4">A la Batalla</button>
+        </main>
+
+        <footer>
+            <div id="inventario-global">
+                <h3>Inventario</h3>
+                <div id="inventory-container"></div>
+            </div>
+        </footer>
     </section>
 
     <!-- ESCENA 4 -->
@@ -179,7 +206,9 @@
             <div class="grid-enemigos" id="enemigos-grid"></div>
         </main>
 
-        <button id="btn-to-scene-5">Comenzar Batallas</button>
+        <footer>
+            <button id="btn-to-scene-5">Comenzar Batallas</button>
+        </footer>
     </section>
 
     <!-- ESCENA 5 -->
