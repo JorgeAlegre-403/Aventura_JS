@@ -1,4 +1,5 @@
 #scene-5 {
+
     width: 100%;
     min-height: 100vh;
     background: var(--color-primary);
@@ -8,6 +9,7 @@
 }
 
 #scene-5 header {
+    color: white;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -130,6 +132,8 @@
 #scene-5 footer {
     display: flex;
     justify-content: center;
+    width: fit-content;
+    margin: auto;
     gap: 20px;
     padding: 20px 0;
 }
@@ -208,6 +212,7 @@
         opacity: 0;
         transform: translateX(-100vw);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -219,6 +224,7 @@
         opacity: 0;
         transform: translateX(100vw);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);

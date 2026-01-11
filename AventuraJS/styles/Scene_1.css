@@ -1,26 +1,17 @@
-#scene-1 {
-    width: 100%;
-    min-height: 100vh;
-    background: var(--color-primary);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-}
-
-#scene-1 header {
-    width: 100%;
-    text-align: center;
-}
-
-#titulo {
+#scene-1 header h1 {
     color: white;
     font-size: 2.5rem;
-    text-align: center;
-    margin: 20px 0;
     letter-spacing: 2px;
+    margin: 0;
+}
+
+#scene-1 main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 30px 20px;
 }
 
 #jugador-escena-1 {
@@ -51,7 +42,6 @@
 #estadisticas-escena-1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 12px;
     gap: 20px;
     width: 90%;
     max-width: 600px;
@@ -75,6 +65,12 @@
     color: var(--color-accent);
 }
 
+#scene-1 footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #scene-1 button {
     padding: 15px 40px;
     font-size: 1.2rem;
@@ -86,13 +82,13 @@
     cursor: pointer;
 }
 
-#scene-1 button:hover{
+#scene-1 button:hover {
     transform: scale(1.05);
     transition: 0.2s ease-in-out;
 }
 
 @media (max-width: 720px) {
-    #titulo {
+    #scene-1 header h1 {
         font-size: 1.8rem;
     }
 
@@ -116,7 +112,7 @@
 }
 
 @media (max-width: 360px) {
-    #titulo {
+    #scene-1 header h1 {
         font-size: 1.4rem;
     }
 
