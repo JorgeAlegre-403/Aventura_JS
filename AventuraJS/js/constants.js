@@ -22,7 +22,7 @@ export const PRODUCTOS = [
     // ARMAS
     {
         nombre: "Daga",
-        imagen: "./AventuraJS/objects/Dagger.png",
+        imagen: "./AventuraJS/images/objects/Dagger.png",
         precio: 80,
         rareza: RAREZAS.COMUN,
         tipo: TIPOS.ARMA,
@@ -30,7 +30,7 @@ export const PRODUCTOS = [
     },
     {
         nombre: "Cuchilla",
-        imagen: "./AventuraJS/objects/Cuchilla.png",
+        imagen: "./AventuraJS/images/objects/Cuchilla.png",
         precio: 100,
         rareza: RAREZAS.COMUN,
         tipo: TIPOS.ARMA,
@@ -38,7 +38,7 @@ export const PRODUCTOS = [
     },
     {
         nombre: "Pistola",
-        imagen: "./AventuraJS/objects/Pistola.png",
+        imagen: "./AventuraJS/images/objects/Pistola.png",
         precio: 150,
         rareza: RAREZAS.RARA,
         tipo: TIPOS.ARMA,
@@ -46,7 +46,7 @@ export const PRODUCTOS = [
     },
     {
         nombre: "Katana",
-        imagen: "./AventuraJS/objects/Katana.png",
+        imagen: "./AventuraJS/images/objects/Katana.png",
         precio: 200,
         rareza: RAREZAS.EPICA,
         tipo: TIPOS.ARMA,
@@ -56,7 +56,7 @@ export const PRODUCTOS = [
     // ARMADURAS
     {
         nombre: "Armadura Ligera",
-        imagen: "./AventuraJS/objects/Armadura.png",
+        imagen: "./AventuraJS/images/objects/Armadura.png",
         precio: 60,
         rareza: RAREZAS.COMUN,
         tipo: TIPOS.ARMADURA,
@@ -64,7 +64,7 @@ export const PRODUCTOS = [
     },
     {
         nombre: "Robot Ayudante",
-        imagen: "./AventuraJS/objects/robot_ayudante.png",
+        imagen: "./AventuraJS/images/objects/robot_ayudante.png",
         precio: 90,
         rareza: RAREZAS.COMUN,
         tipo: TIPOS.ARMADURA,
@@ -72,7 +72,7 @@ export const PRODUCTOS = [
     },
     {
         nombre: "Brazo mecanico",
-        imagen: "./AventuraJS/objects/Brazo_mecanico.png",
+        imagen: "./AventuraJS/images/objects/Brazo_mecanico.png",
         precio: 85,
         rareza: RAREZAS.COMUN,
         tipo: TIPOS.ARMADURA,
@@ -80,7 +80,7 @@ export const PRODUCTOS = [
     },
     {
         nombre: "Escudo",
-        imagen: "./AventuraJS/objects/escudo.png",
+        imagen: "./AventuraJS/images/objects/escudo.png",
         precio: 75,
         rareza: RAREZAS.COMUN,
         tipo: TIPOS.ARMADURA,
@@ -88,7 +88,7 @@ export const PRODUCTOS = [
     },
     {
         nombre: "Gafas",
-        imagen: "./AventuraJS/objects/gafas-cyberpunk.png",
+        imagen: "./AventuraJS/images/objects/gafas-cyberpunk.png",
         precio: 70,
         rareza: RAREZAS.COMUN,
         tipo: TIPOS.ARMADURA,
@@ -98,7 +98,7 @@ export const PRODUCTOS = [
     // CONSUMIBLES
     {
         nombre: "Poción Pequeña",
-        imagen: "./AventuraJS/objects/Pocion.png",
+        imagen: "./AventuraJS/images/objects/Pocion.png",
         precio: 50,
         rareza: RAREZAS.COMUN,
         tipo: TIPOS.CONSUMIBLE,
@@ -106,7 +106,7 @@ export const PRODUCTOS = [
     },
     {
         nombre: "Energitica",
-        imagen: "./AventuraJS/objects/Energetica.png",
+        imagen: "./AventuraJS/images/objects/Energetica.png",
         precio: 50,
         rareza: RAREZAS.COMUN,
         tipo: TIPOS.CONSUMIBLE,
@@ -118,19 +118,19 @@ export const PRODUCTOS = [
 export const ENEMIGOS = [
     {
         nombre: "Kiddie",
-        avatar: "./AventuraJS/enemies/Enemy_2.png",
+        avatar: "./AventuraJS/images/enemies/Enemy_2.png",
         nivelAtaque: 20,
         vida: 100
     },
     {
         nombre: "Madisson",
-        avatar: "./AventuraJS/enemies/Enemy_3.png",
+        avatar: "./AventuraJS/images/enemies/Enemy_3.png",
         nivelAtaque: 30,
         vida: 120
     },
     {
         nombre: "Josefina",
-        avatar: "./AventuraJS/enemies/Enemy_4.png",
+        avatar: "./AventuraJS/images/enemies/Enemy_4.png",
         nivelAtaque: 40,
         vida: 150
     }
@@ -140,7 +140,7 @@ export const ENEMIGOS = [
 export const JEFES = [
     {
         nombre: "Adam Smasher",
-        avatar: "./AventuraJS/enemies/Boss.png",
+        avatar: "./AventuraJS/images/enemies/Boss.png",
         nivelAtaque: 50,
         vida: 200,
         multiplicador: 1.5

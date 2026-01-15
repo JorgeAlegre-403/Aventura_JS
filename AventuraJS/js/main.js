@@ -11,7 +11,6 @@ let enemigosDerrotados = 0;
 let jefesDerrotados = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Mostrar monedero desde el inicio - FORZAR visualización
     const monedero = document.getElementById("monedero-container");
     if (monedero) {
         monedero.style.display = "block";
@@ -193,7 +192,7 @@ function inicializarFormulario() {
             return;
         }
 
-        jugador = new Jugador(nombre, "./AventuraJS/characters/Personaje_Principal.png");
+        jugador = new Jugador(nombre, "./AventuraJS/images/characters/Personaje_Principal.png");
         jugador.ataqueBase = ataque;
         jugador.defensaBase = defensa;
         jugador.vida = vida;
