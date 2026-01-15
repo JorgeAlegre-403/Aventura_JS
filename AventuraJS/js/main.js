@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
         monedero.style.visibility = "visible";
         monedero.style.opacity = "1";
     }
-    
+
     // Inicializar inventario vacío con 6 celdas
     inicializarInventarioVacio();
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function inicializarInventarioVacio() {
     const container = document.getElementById("inventory-container");
     container.innerHTML = "";
-    
+
     for (let i = 0; i < 6; i++) {
         const celda = document.createElement("div");
         celda.classList.add("item", "empty");
@@ -88,10 +88,10 @@ function inicializarInventarioVacio() {
 
 function actualizarInventarioGlobal() {
     const containers = document.querySelectorAll("#inventory-container");
-    
+
     containers.forEach(container => {
         container.innerHTML = "";
-        
+
         if (jugador && jugador.inventario) {
             for (let i = 0; i < jugador.inventario.length; i++) {
                 const producto = jugador.inventario[i];
@@ -102,7 +102,7 @@ function actualizarInventarioGlobal() {
                 container.appendChild(item);
             }
         }
-        
+
         const inventarioLength = jugador ? jugador.inventario.length : 0;
         const celdasRestantes = Math.max(0, 6 - inventarioLength);
         for (let i = 0; i < celdasRestantes; i++) {
@@ -530,18 +530,32 @@ function mostrarRanking() {
         ranking = JSON.parse(datos);
     }
 
-    // AÑADIR DATOS SIMULADOS SI HAY MENOS DE 15
     if (ranking.length < 15) {
         const datosBase = [
+            { nombre: "Alex Knight", puntos: 950, monedas: 750 },
+            { nombre: "María Tech", puntos: 890, monedas: 680 },
+            { nombre: "Carlos Cyber", puntos: 850, monedas: 620 },
+            { nombre: "Luna Shadow", puntos: 820, monedas: 590 },
+            { nombre: "Viktor Steel", puntos: 780, monedas: 550 },
+            { nombre: "Aria Neon", puntos: 750, monedas: 520 },
+            { nombre: "Max Voltage", puntos: 720, monedas: 490 },
+            { nombre: "Zara Pixel", puntos: 690, monedas: 460 },
+            { nombre: "Neo Chrome", puntos: 660, monedas: 430 },
+            { nombre: "Kai Runner", puntos: 630, monedas: 400 },
+            { nombre: "Raven Dark", puntos: 600, monedas: 370 },
+            { nombre: "Echo Matrix", puntos: 570, monedas: 340 },
+            { nombre: "Blade Zero", puntos: 540, monedas: 310 },
+            { nombre: "Nova Spark", puntos: 510, monedas: 280 },
+            { nombre: "Cypher Ghost", puntos: 480, monedas: 250 }
         ];
-        
+
         for (let i = 0; i < datosBase.length && ranking.length < 15; i++) {
             const existe = ranking.some(r => r.nombre === datosBase[i].nombre);
             if (!existe) {
                 ranking.push(datosBase[i]);
             }
         }
-        
+
         ranking.sort(function (a, b) {
             return b.puntos - a.puntos;
         });
@@ -566,7 +580,7 @@ function reiniciarJuego() {
     jugador = null;
 
     inicializarInventarioVacio();
-    
+
     document.getElementById("nombre-personaje").value = "";
     document.getElementById("ataque-personaje").value = "0";
     document.getElementById("defensa-personaje").value = "0";
