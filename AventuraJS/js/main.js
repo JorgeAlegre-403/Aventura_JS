@@ -11,6 +11,16 @@ let enemigosDerrotados = 0;
 let jefesDerrotados = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Mostrar monedero desde el inicio - FORZAR visualización
+    const monedero = document.getElementById("monedero-container");
+    if (monedero) {
+        monedero.style.display = "block";
+        monedero.style.visibility = "visible";
+        monedero.style.opacity = "1";
+    }
+    
+    // Inicializar inventario vacío con 6 celdas
+    inicializarInventarioVacio();
 
     inicializarFormulario();
 
@@ -65,6 +75,44 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+function inicializarInventarioVacio() {
+    const container = document.getElementById("inventory-container");
+    container.innerHTML = "";
+    
+    for (let i = 0; i < 6; i++) {
+        const celda = document.createElement("div");
+        celda.classList.add("item", "empty");
+        container.appendChild(celda);
+    }
+}
+
+function actualizarInventarioGlobal() {
+    const containers = document.querySelectorAll("#inventory-container");
+    
+    containers.forEach(container => {
+        container.innerHTML = "";
+        
+        if (jugador && jugador.inventario) {
+            for (let i = 0; i < jugador.inventario.length; i++) {
+                const producto = jugador.inventario[i];
+                const item = document.createElement("div");
+                item.classList.add("item");
+                item.dataset.nombre = producto.nombre;
+                item.innerHTML = '<img src="' + producto.imagen + '" alt="' + producto.nombre + '" title="' + producto.nombre + '">';
+                container.appendChild(item);
+            }
+        }
+        
+        const inventarioLength = jugador ? jugador.inventario.length : 0;
+        const celdasRestantes = Math.max(0, 6 - inventarioLength);
+        for (let i = 0; i < celdasRestantes; i++) {
+            const celda = document.createElement("div");
+            celda.classList.add("item", "empty");
+            container.appendChild(celda);
+        }
+    });
+}
 
 function inicializarFormulario() {
     const form = document.getElementById("form-personaje");
@@ -209,8 +257,7 @@ function cargarMercado() {
                 tarjeta.classList.remove("added");
                 this.textContent = "Comprar";
 
-                const item = document.querySelector('[data-nombre="' + producto.nombre + '"]');
-                if (item) item.remove();
+                actualizarInventarioGlobal();
             } else {
                 if (jugador.dinero < precio) {
                     alert("¡No tienes suficiente dinero!");
@@ -224,11 +271,7 @@ function cargarMercado() {
                 tarjeta.classList.add("added");
                 this.textContent = "Retirar";
 
-                const item = document.createElement("div");
-                item.classList.add("item");
-                item.dataset.nombre = producto.nombre;
-                item.innerHTML = '<img src="' + producto.imagen + '" alt="' + producto.nombre + '">';
-                document.getElementById("inventory-container").appendChild(item);
+                actualizarInventarioGlobal();
             }
         });
     }
@@ -488,13 +531,21 @@ function mostrarRanking() {
         ranking = JSON.parse(datos);
     }
 
-    // AÑADIR DATOS SIMULADOS SI NO HAY NINGUNO
-    if (ranking.length === 0) {
-        ranking = [
-            { nombre: "Alex Knight", puntos: 950, monedas: 750 },
-            { nombre: "María Tech", puntos: 890, monedas: 680 },
-            { nombre: "Carlos Cyber", puntos: 850, monedas: 620 }
+    // AÑADIR DATOS SIMULADOS SI HAY MENOS DE 15
+    if (ranking.length < 15) {
+        const datosBase = [
         ];
+        
+        for (let i = 0; i < datosBase.length && ranking.length < 15; i++) {
+            const existe = ranking.some(r => r.nombre === datosBase[i].nombre);
+            if (!existe) {
+                ranking.push(datosBase[i]);
+            }
+        }
+        
+        ranking.sort(function (a, b) {
+            return b.puntos - a.puntos;
+        });
     }
 
     const tbody = document.getElementById("ranking-body");
@@ -511,10 +562,12 @@ function mostrarRanking() {
         tbody.appendChild(fila);
     }
 }
+
 function reiniciarJuego() {
     jugador = null;
 
-    document.getElementById("inventory-container").innerHTML = "";
+    inicializarInventarioVacio();
+    
     document.getElementById("nombre-personaje").value = "";
     document.getElementById("ataque-personaje").value = "0";
     document.getElementById("defensa-personaje").value = "0";
@@ -522,7 +575,6 @@ function reiniciarJuego() {
     document.getElementById("puntos-disponibles").textContent = "10";
     document.getElementById("total-asignado").textContent = "100";
     document.getElementById("error-nombre").textContent = "";
-    document.getElementById("monedero-container").style.display = "none";
     document.getElementById("dinero-jugador").textContent = "500";
 
     showScene("scene-0");
