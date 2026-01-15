@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
         monedero.style.opacity = "1";
     }
 
-    // Inicializar inventario vacío con 6 celdas
     inicializarInventarioVacio();
 
     inicializarFormulario();
