@@ -148,6 +148,7 @@ body {
   from {
     transform: translateX(-150%);
   }
+
   to {
     transform: translateX(0);
   }
@@ -230,12 +231,15 @@ body {
     top: -150px;
     opacity: 0;
   }
+
   10% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.8;
   }
+
   100% {
     top: 50vh;
     opacity: 0;
@@ -246,6 +250,7 @@ body {
   0% {
     transform: rotateY(0deg);
   }
+
   100% {
     transform: rotateY(360deg);
   }
@@ -286,5 +291,115 @@ body {
   .moneda img {
     width: 60px;
     height: 60px;
+  }
+}
+
+#top-secret {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 16px;
+  padding: 8px;
+  position: fixed;
+  bottom: -100px;
+  right: 0;
+  width: 140px;
+  height: 140px;
+  background-color: rgb(181, 181, 181);
+  border: 2px solid black;
+}
+
+#top-secret h1,
+p {
+  font-weight: bold;
+}
+
+#top-secret:hover {
+  transition: 1s ease-out;
+  bottom: 0;
+}
+
+#estrellas1 {
+  position: fixed;
+  right: 0;
+  margin: 4px;
+  height: 30px;
+  width: 30px;
+  background-color: goldenrod;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+      50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: girar 1s infinite;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+}
+
+#estrellas2 {
+  position: fixed;
+  right: 30px;
+  margin: 4px;
+  height: 30px;
+  width: 30px;
+  background-color: goldenrod;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+      50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: girar 1s infinite;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+}
+
+#estrellas3 {
+  position: fixed;
+  right: 60px;
+  margin: 4px;
+  height: 30px;
+  width: 30px;
+  background-color: goldenrod;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+      50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: girar 1s infinite;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+}
+
+#estrellas4 {
+  position: fixed;
+  right: 90px;
+  margin: 4px;
+  height: 30px;
+  width: 30px;
+  background-color: goldenrod;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+      50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: girar 1s infinite;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+}
+
+#estrellas5 {
+  position: fixed;
+  right: 120px;
+  margin: 4px;
+  height: 30px;
+  width: 30px;
+  background-color: goldenrod;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%,
+      50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: girar 1s infinite;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes girar {
+
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
   }
 }
