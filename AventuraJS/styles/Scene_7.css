@@ -31,19 +31,20 @@
 }
 
 #tabla-ranking thead {
+    text-transform: uppercase;
     position: sticky;
     top: 0;
-    background: var(--color-accent);
     z-index: 10;
 }
 
 #tabla-ranking thead th {
-    padding: 15px;
+    padding: 18px;
     text-align: center;
     font-size: 1.1rem;
     font-weight: bold;
     color: white;
     border: 2px solid var(--color-black);
+    background: linear-gradient(var(--color-accent), var(--color-primary));
 }
 
 #tabla-ranking tbody {
@@ -75,8 +76,9 @@
 }
 
 #tabla-ranking tbody tr:hover {
-    background: rgba(186, 0, 180, 0.1);
-    transition: background 0.3s;
+    transform: scale(1.01);
+    transition: 1.5s ease-in-out;
+    border-left: 4px solid var(--color-accent);
 }
 
 #tabla-ranking thead tr {
@@ -173,4 +175,19 @@
         padding: 10px 30px;
         font-size: 1rem;
     }
+}
+
+#tabla-ranking tbody tr:nth-child(1) {
+    background-color: #d4af37;
+    border-left: 4px solid #d4af37;
+}
+
+#tabla-ranking tbody tr:nth-child(2) {
+    background-color: #c0c0c0;
+    border-left: 4px solid #c0c0c0;
+}
+
+#tabla-ranking tbody tr:nth-child(3) {
+    background-color: #cd7f32;
+    border-left: 4px solid #cd7f32;
 }

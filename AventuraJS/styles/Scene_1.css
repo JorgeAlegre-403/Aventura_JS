@@ -54,6 +54,11 @@
     border-radius: 10px;
     text-align: center;
 }
+#estadisticas-escena-1 div:hover{
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    box-shadow: 2px 2px 2px black;
+}
 
 #estadisticas-escena-1 p {
     font-size: 1.2rem;
@@ -111,7 +116,7 @@
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
     #scene-1 header h1 {
         font-size: 1.4rem;
     }

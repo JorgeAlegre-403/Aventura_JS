@@ -70,6 +70,7 @@
     height: 120px;
     object-fit: contain;
     flex-shrink: 0;
+    animation: 2.5s slideLeft ease-out backwards;
 }
 
 .nombre-producto {
@@ -158,9 +159,11 @@
     border: 1px solid black;
     padding: 5px;
 }
+
 .item:hover {
-transform: scale(1.05);
+    transform: scale(1.05);
 }
+
 .item img {
     width: 100%;
     height: 100%;
@@ -217,5 +220,17 @@ transform: scale(1.05);
     .item {
         width: 80px;
         height: 80px;
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(-200px) rotateY(-360deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) rotateY(0deg);
+        opacity: 1;
     }
 }
